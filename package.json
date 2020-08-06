@@ -21,6 +21,7 @@
     "rollup-plugin-terser": "^5.1.2",
     "svelte": "^3.0.0",
     "svelte-jester": "^1.0.6",
+    "svelte-preprocess": "^4.0.10",
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.7"
   },
@@ -30,7 +31,12 @@
   "jest": {
     "preset": "ts-jest",
     "transform": {
-      "^.+\\.svelte$": "jest-transform-svelte"
+      "^.+\\.svelte$": [
+        "svelte-jester",
+        {
+          "preprocess": true
+        }
+      ]
     },
     "moduleFileExtensions": [
       "ts",
